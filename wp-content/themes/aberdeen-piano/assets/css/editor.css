@@ -1,0 +1,87 @@
+/**
+ * Aberdeen Piano — classic editor styles.
+ *
+ * Makes the editing surface resemble the published page, so an editor writing
+ * a Terms or Privacy page sees roughly what visitors will see.
+ */
+
+body#tinymce.wp-editor {
+	background: #fffaf3;
+	color: #12191d;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 17px;
+	line-height: 1.75;
+	max-width: 820px;
+	margin: 20px auto;
+	padding: 0 16px;
+}
+
+body#tinymce.wp-editor a {
+	color: #bf4b18;
+}
+
+body#tinymce.wp-editor h1,
+body#tinymce.wp-editor h2,
+body#tinymce.wp-editor h3,
+body#tinymce.wp-editor h4,
+body#tinymce.wp-editor h5 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: normal;
+	color: #12191d;
+	line-height: 1.25;
+}
+
+body#tinymce.wp-editor h2 { font-size: 1.9em; margin: 1.2em 0 .4em; }
+body#tinymce.wp-editor h3 { font-size: 1.4em; margin: 1.2em 0 .4em; }
+body#tinymce.wp-editor h4 { font-size: 1.2em; }
+
+body#tinymce.wp-editor h6 {
+	font-size: .8em;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: #415662;
+}
+
+body#tinymce.wp-editor blockquote {
+	border-left: 3px solid #ff8a34;
+	margin: 1.4em 0;
+	padding: .2em 0 .2em 1.2em;
+	font-style: italic;
+	color: #415662;
+}
+
+body#tinymce.wp-editor table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+body#tinymce.wp-editor th,
+body#tinymce.wp-editor td {
+	border: 1px solid rgba(18, 25, 29, .16);
+	padding: 8px 12px;
+}
+
+body#tinymce.wp-editor thead th {
+	background: rgba(18, 25, 29, .05);
+	font-size: .8em;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+body#tinymce.wp-editor img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+body#tinymce.wp-editor hr {
+	border: 0;
+	border-top: 1px solid rgba(18, 25, 29, .16);
+	margin: 2em 0;
+}
+
+body#tinymce.wp-editor code {
+	background: rgba(18, 25, 29, .06);
+	border-radius: 4px;
+	padding: 2px 6px;
+}

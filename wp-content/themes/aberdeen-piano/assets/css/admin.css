@@ -1,0 +1,432 @@
+/**
+ * Aberdeen Piano — admin theme.
+ *
+ * Brings wp-admin and ACF in line with the site: the ink/cream palette, the
+ * gold accent, and Georgia for headings. Deliberately restrained — colour,
+ * type and spacing only. Nothing here changes layout, hides controls or
+ * overrides WordPress' focus styles, so the admin stays predictable and
+ * keyboard-accessible.
+ */
+
+:root {
+	--ap-ink: #12191d;
+	--ap-ink-soft: #1c262c;
+	--ap-sage: #71838d;
+	--ap-sage-deep: #415662;
+	--ap-cream: #f3eee6;
+	--ap-paper: #fffaf3;
+	--ap-blush: #f4b27f;
+	--ap-rose: #bf4b18;
+	--ap-gold: #ff8a34;
+	--ap-slate: #526572;
+	--ap-line: rgba(18, 25, 29, .14);
+}
+
+/* ---------------------------------------------------------------
+   Canvas and typography
+   --------------------------------------------------------------- */
+
+body.wp-admin {
+	background: var(--ap-cream);
+}
+
+.wrap h1,
+.wrap h2,
+.postbox-header h2,
+.postbox h2,
+.acf-postbox .postbox-header h2,
+h1.wp-heading-inline {
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: normal;
+	color: var(--ap-ink);
+	letter-spacing: -0.01em;
+}
+
+.wrap h1.wp-heading-inline {
+	font-size: 1.9rem;
+}
+
+a {
+	color: var(--ap-sage-deep);
+}
+
+a:hover,
+a:focus {
+	color: var(--ap-rose);
+}
+
+/* ---------------------------------------------------------------
+   Admin menu
+   --------------------------------------------------------------- */
+
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu,
+#adminmenu .wp-submenu {
+	background: var(--ap-ink);
+}
+
+#adminmenu a {
+	color: #d8d2c7;
+}
+
+#adminmenu div.wp-menu-image:before {
+	color: var(--ap-sage);
+}
+
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+	background: var(--ap-ink-soft);
+	color: var(--ap-gold);
+}
+
+#adminmenu li.menu-top:hover div.wp-menu-image:before,
+#adminmenu li.opensub > a.menu-top div.wp-menu-image:before {
+	color: var(--ap-gold);
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+	background: var(--ap-ink-soft);
+	color: var(--ap-gold);
+	box-shadow: inset 3px 0 0 var(--ap-gold);
+}
+
+#adminmenu li.current a.menu-top div.wp-menu-image:before,
+#adminmenu li.wp-has-current-submenu div.wp-menu-image:before {
+	color: var(--ap-gold);
+}
+
+#adminmenu .wp-submenu a:hover,
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu li.current a {
+	color: var(--ap-gold);
+}
+
+#adminmenu .wp-submenu li.current a {
+	font-weight: 600;
+}
+
+#collapse-button {
+	color: var(--ap-sage);
+}
+
+/* Admin bar */
+
+#wpadminbar {
+	background: var(--ap-ink);
+}
+
+#wpadminbar .ab-top-menu > li:hover > .ab-item,
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar .ab-top-menu > li > .ab-item:focus {
+	background: var(--ap-ink-soft);
+	color: var(--ap-gold);
+}
+
+/* ---------------------------------------------------------------
+   Buttons
+   --------------------------------------------------------------- */
+
+.wp-core-ui .button-primary {
+	background: var(--ap-ink);
+	border-color: var(--ap-ink);
+	color: var(--ap-paper);
+	text-shadow: none;
+	box-shadow: none;
+	border-radius: 99px;
+	padding: 0 16px;
+	letter-spacing: .04em;
+}
+
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:focus {
+	background: var(--ap-rose);
+	border-color: var(--ap-rose);
+	color: #fff;
+}
+
+.wp-core-ui .button-primary:disabled,
+.wp-core-ui .button-primary[disabled] {
+	background: var(--ap-sage) !important;
+	border-color: var(--ap-sage) !important;
+	color: var(--ap-paper) !important;
+}
+
+.wp-core-ui .button,
+.wp-core-ui .button-secondary {
+	border-radius: 99px;
+	border-color: var(--ap-line);
+	color: var(--ap-sage-deep);
+	background: var(--ap-paper);
+}
+
+.wp-core-ui .button:hover,
+.wp-core-ui .button-secondary:hover {
+	border-color: var(--ap-sage-deep);
+	color: var(--ap-ink);
+	background: #fff;
+}
+
+.wp-core-ui .page-title-action {
+	border-radius: 99px;
+	border-color: var(--ap-line);
+	background: var(--ap-paper);
+	color: var(--ap-sage-deep);
+}
+
+.wp-core-ui .page-title-action:hover {
+	background: var(--ap-ink);
+	border-color: var(--ap-ink);
+	color: var(--ap-gold);
+}
+
+/* ---------------------------------------------------------------
+   Panels, tables and notices
+   --------------------------------------------------------------- */
+
+.postbox,
+.wp-list-table,
+.tablenav .tablenav-pages .current-page,
+#poststuff .postbox {
+	border-color: var(--ap-line);
+	background: var(--ap-paper);
+	border-radius: 10px;
+}
+
+.postbox-header {
+	border-bottom-color: var(--ap-line);
+	background: linear-gradient(180deg, #fff, var(--ap-paper));
+	border-radius: 10px 10px 0 0;
+}
+
+.wp-list-table thead th,
+.wp-list-table tfoot th {
+	background: var(--ap-cream);
+	color: var(--ap-ink);
+}
+
+.wp-list-table thead th a,
+.wp-list-table thead th {
+	font-size: .78rem;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+}
+
+.striped > tbody > :nth-child(odd),
+.wp-list-table.striped > tbody > :nth-child(odd) {
+	background: #fdfaf4;
+}
+
+.subsubsub a.current {
+	color: var(--ap-rose);
+	font-weight: 600;
+}
+
+.notice,
+div.updated,
+div.error {
+	border-radius: 8px;
+	background: var(--ap-paper);
+}
+
+.notice-success {
+	border-left-color: var(--ap-sage-deep);
+}
+
+.notice-info {
+	border-left-color: var(--ap-gold);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+	border-color: var(--ap-sage-deep);
+	box-shadow: 0 0 0 1px var(--ap-sage-deep);
+}
+
+/* ---------------------------------------------------------------
+   ACF
+   --------------------------------------------------------------- */
+
+.acf-postbox .postbox-header h2,
+.acf-postbox > .postbox-header > .hndle {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.05rem;
+	color: var(--ap-ink);
+}
+
+/* Field labels read as small caps, like the site's eyebrows. */
+.acf-field > .acf-label label {
+	color: var(--ap-ink);
+	font-weight: 700;
+	font-size: .74rem;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+.acf-field > .acf-label p.description {
+	color: var(--ap-sage-deep);
+	font-style: normal;
+	text-transform: none;
+	letter-spacing: 0;
+}
+
+.acf-field {
+	border-top-color: var(--ap-line);
+}
+
+/* Tabs */
+
+.acf-tab-wrap {
+	background: var(--ap-cream);
+	border-color: var(--ap-line);
+}
+
+.acf-tab-group {
+	border-bottom-color: var(--ap-line);
+}
+
+.acf-tab-group li a {
+	color: var(--ap-sage-deep);
+	background: transparent;
+	border-color: transparent;
+	font-size: .78rem;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+}
+
+.acf-tab-group li a:hover {
+	color: var(--ap-rose);
+}
+
+.acf-tab-group li.active a {
+	background: var(--ap-paper);
+	color: var(--ap-ink);
+	border-color: var(--ap-line);
+	border-bottom-color: var(--ap-paper);
+	box-shadow: inset 0 2px 0 var(--ap-gold);
+}
+
+/* Repeaters and flexible rows */
+
+.acf-table > thead > tr > th,
+.acf-table thead th {
+	background: var(--ap-cream);
+	color: var(--ap-ink);
+	border-color: var(--ap-line);
+	font-size: .72rem;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.acf-table,
+.acf-table > tbody > tr > td,
+.acf-repeater .acf-row-handle {
+	border-color: var(--ap-line);
+}
+
+.acf-repeater .acf-row-handle {
+	background: var(--ap-cream);
+	color: var(--ap-sage-deep);
+}
+
+.acf-repeater .acf-row-handle .acf-icon {
+	border-color: var(--ap-line);
+	color: var(--ap-sage-deep);
+}
+
+.acf-repeater .acf-row-handle .acf-icon:hover {
+	background: var(--ap-ink);
+	border-color: var(--ap-ink);
+	color: var(--ap-gold);
+}
+
+.acf-repeater > .acf-actions .acf-button,
+.acf-actions .button {
+	border-radius: 99px;
+}
+
+/* The blue ACF uses for links and accents becomes the studio gold/rose. */
+.acf-admin-toolbar .acf-tab.is-active,
+.acf-field-setting-name .acf-input a,
+.acf-input a {
+	color: var(--ap-sage-deep);
+}
+
+.acf-input a:hover {
+	color: var(--ap-rose);
+}
+
+.acf-true-false .acf-switch.-on {
+	background: var(--ap-sage-deep);
+	border-color: var(--ap-sage-deep);
+}
+
+.acf-true-false .acf-switch.-on:hover {
+	background: var(--ap-ink);
+	border-color: var(--ap-ink);
+}
+
+/* The options page ("Site Settings") header */
+.acf-admin-page .acf-admin-toolbar {
+	background: var(--ap-ink);
+}
+
+.acf-admin-page .acf-admin-toolbar .acf-logo a {
+	color: var(--ap-gold);
+}
+
+/* ---------------------------------------------------------------
+   Form Leads screen
+   --------------------------------------------------------------- */
+
+.ap-lead-tag {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 99px;
+	background: var(--ap-cream);
+	border: 1px solid var(--ap-line);
+	color: var(--ap-sage-deep);
+	font-size: 10px;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.ap-lead-tag.is-contact {
+	background: var(--ap-ink);
+	border-color: var(--ap-ink);
+	color: var(--ap-gold);
+}
+
+.column-message {
+	width: 26%;
+}
+
+.column-created_at {
+	width: 12%;
+}
+
+.ap-leads-intro {
+	max-width: 60em;
+	color: var(--ap-sage-deep);
+	font-size: .95rem;
+}
+
+/* ---------------------------------------------------------------
+   Editor: make the post title feel like the site's headline
+   --------------------------------------------------------------- */
+
+#titlediv #title {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.6em;
+	color: var(--ap-ink);
+}
